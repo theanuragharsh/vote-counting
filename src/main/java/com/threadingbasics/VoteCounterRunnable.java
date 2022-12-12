@@ -17,11 +17,11 @@ public class VoteCounterRunnable implements Runnable {
     @Override
     public void run() {
 
-        System.out.println(Thread.currentThread().getName() + " : Initial count : " + getCounter());
+        System.out.println(Thread.currentThread().getName() + " : Initial count : " + getCounter() + " : thread Priority : " + Thread.currentThread().getPriority());
         synchronized (this) {
             setCounter(getCounter() + 1);
-            System.out.println("/n calculating count .. ");
+            System.out.println(" calculating count .. ");
         }
-        System.out.println(Thread.currentThread().getName() + " : Final Count : " + getCounter());
+        System.out.println(Thread.currentThread().getName() + " : Final Count : " + getCounter() + " : thread Priority : " + Thread.currentThread().getPriority());
     }
 }
